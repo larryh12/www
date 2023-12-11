@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.about-page > h2 {
+  margin-top: 0;
+}
+.about-page > p:last-of-type {
+  margin-bottom: 0;
+}
+
+.code-container pre {
+  padding: 0.5rem;
+}
+
+/* Code theme switch */
+.dark .code-container > .shiki-dark {
+  display: block;
+}
+.dark .code-container > .shiki-light {
+  display: none;
+}
+.light .code-container > .shiki-light {
+  display: block;
+}
+.light .code-container > .shiki-dark {
+  display: none;
+}
+
+/* Code line number */
+div.code-container > pre > code {
+  counter-reset: line;
+}
+div.code-container > pre > code > .line::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+}
